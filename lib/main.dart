@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './themes/stander/text.dart';
 import './themes/stander/buttons.dart';
-import './widgets/mainPage.dart';
+import 'screens/mainPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: MainPage(),
     );
   }
