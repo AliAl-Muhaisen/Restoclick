@@ -1,3 +1,6 @@
+import './verify.dart';
+
+
 class User {
   static int _countID = 1;
   final int _id = _countID;
@@ -32,7 +35,7 @@ class User {
   //
   //methods 4 email
   set email(String email) {
-    if (isEMail()) {
+    if (Verify.isEMail(email)) {
       // ignore: unnecessary_this
       this._email = email;
     }
@@ -42,11 +45,7 @@ class User {
     return _email;
   }
   
-  bool isEMail()
-  {
-    // to check if the email address valid or not 
-      return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(_email);
-  }
+  
   //
 
 

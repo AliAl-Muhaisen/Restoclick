@@ -26,7 +26,7 @@ class MainPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: const Text(
-              "-Restoclick-",
+              "Restoclick",
               style: appNameTextStyle,
             ),
           ),
@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                     width: 110,
                     height: 53,
                     child: ElevatedButton(
-                      style: lognSignButtonStyle,
+                      style: loginSignButtonStyle(),
                       onPressed: () =>
                           Screen.navigatorPush(context, LoginPage()),
                       child: Text("Log in"),
@@ -59,9 +59,9 @@ class MainPage extends StatelessWidget {
                     width: 110,
                     height: 53,
                     child: ElevatedButton(
-                      style: lognSignButtonStyle,
+                      style: loginSignButtonStyle(),
                       onPressed: () =>
-                          Screen.navigatorPush(context, const SignupPage()),
+                          Screen.navigatorPush(context, SignupPage()),
                       child: const Text("Sign up"),
                     ),
                   ),
