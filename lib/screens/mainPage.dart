@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:restoclick/widgets/bottomNavBar.dart';
 import './loginPage.dart';
 import './signupPage.dart';
 import '../themes/stander/text.dart';
 import '../models/screen.dart';
 import '../themes/stander/buttons.dart';
+import './homePage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -75,7 +77,7 @@ class MainPage extends StatelessWidget {
               height: 55,
               child: ElevatedButton(
                 style: guestButtonStyle,
-                onPressed: () {},
+                onPressed: () => Screen.navigatorPush(context, BottomNavBar()),
                 child: const Text("Continue as Guest"),
               ),
             ),
