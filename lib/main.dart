@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter/services.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import './themes/stander/text.dart';
 import './themes/stander/buttons.dart';
 import 'screens/mainPage.dart';
@@ -34,12 +35,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: TextTheme(
           headline6: GoogleFonts.abel(
-            backgroundColor: Color.fromARGB(0, 255, 254, 252),
-            fontSize: 20
-          ),
+              backgroundColor: Color.fromARGB(0, 255, 254, 252), fontSize: 20),
         ),
-        scaffoldBackgroundColor: Color.fromARGB(
-            255, 247, 244, 244), //Color.fromARGB(255, 202, 197, 197)
+        scaffoldBackgroundColor: Color.fromARGB(255, 216, 210, 210),
+        //Color.fromARGB(
+        //255, 247, 244, 244), //Color.fromARGB(255, 202, 197, 197)
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -62,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     
       body: MainPage(),
     );
   }

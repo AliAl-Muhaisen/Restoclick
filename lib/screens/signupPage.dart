@@ -34,59 +34,61 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Center(
-                child: Text(
-                  "Sign-Up",
-                  style: appNameTextStyle,
-                  textAlign: TextAlign.center,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Center(
+                  child: Text(
+                    "Sign-Up",
+                    style: appNameTextStyle,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
-            ),
-            Shortcuts(
-              shortcuts: const <ShortcutActivator, Intent>{
-                // Pressing space in the field will now move to the next field.
-                SingleActivator(LogicalKeyboardKey.space): NextFocusIntent(),
-              },
-              child: FocusTraversalGroup(
-                child: Form(
-                  autovalidateMode: AutovalidateMode.always,
-                  onChanged: () {
-                    Form.of(primaryFocus!.context!)!.save();
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Wrap(
-                      children: [
-                        // TextInputType.visiblePassword,Icons.email
-                        emailInput,
-                        phoneNumber,
-                        firstName,
-                        passwordInput,
-
-                        Center(
-                          child: SizedBox(
-                            width: (MediaQuery.of(context).size.width - 30),
-                            height: 45,
-                            child: ElevatedButton(
-                              style: loginSignButtonStyle(radius: 20),
-                              onPressed: () {},
-                              child: Text("Sign up"),
+              Shortcuts(
+                shortcuts: const <ShortcutActivator, Intent>{
+                  // Pressing space in the field will now move to the next field.
+                  SingleActivator(LogicalKeyboardKey.space): NextFocusIntent(),
+                },
+                child: FocusTraversalGroup(
+                  child: Form(
+                    autovalidateMode: AutovalidateMode.always,
+                    onChanged: () {
+                      Form.of(primaryFocus!.context!)!.save();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Wrap(
+                        children: [
+                          // TextInputType.visiblePassword,Icons.email
+                          emailInput,
+                          phoneNumber,
+                          firstName,
+                          passwordInput,
+        
+                          Center(
+                            child: SizedBox(
+                              width: (MediaQuery.of(context).size.width - 30),
+                              height: 45,
+                              child: ElevatedButton(
+                                style: loginSignButtonStyle(radius: 20),
+                                onPressed: () {},
+                                child: Text("Sign up"),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

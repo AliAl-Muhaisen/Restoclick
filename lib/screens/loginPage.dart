@@ -32,13 +32,13 @@ class _LoginPageState extends State<LoginPage> {
   //   });
   // }
 
-  var passwordInput = InputField(
+  final passwordInput = InputField(
     inputIcon: Icons.shield,
     keyBoardType: TextInputType.visiblePassword,
     label: "Password",
     hintText: null,
   );
-  var emailInput = InputField(
+  final emailInput = InputField(
     inputIcon: Icons.email,
     keyBoardType: TextInputType.emailAddress,
     label: "E-Mail",

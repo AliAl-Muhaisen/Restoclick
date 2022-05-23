@@ -23,7 +23,7 @@ class _SearchPageState extends State<SearchPage> {
 }
 
 class MySearchDelegate extends SearchDelegate {
-  List<String> searchList = ['apple', 'strawberry', 'banana'];
+  List<String> searchList = ['ali', 'hasan', 'jood','Dr.hazem'];
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [

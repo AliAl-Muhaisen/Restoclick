@@ -35,35 +35,47 @@ class _InputFieldState extends State<InputField> {
   Widget build(BuildContext context) {
     // print(widget.keyBoardType);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-      child: TextFormField(
-        controller: inputController,
-        onChanged: (String? value) {
-          widget.isValid = !widget.isValid;
-          print('\n\n');
-          print(widget.isValid);
-          print('\n\n');
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+     
+        child: TextFormField(
+          controller: inputController,
+          onChanged: (String? value) {
+            widget.isValid = !widget.isValid;
+            print('\n\n');
+            print(widget.isValid);
+            print('\n\n');
+          },
+          decoration: InputDecoration(
+            label: Text(widget.label),
+            hintText: widget.hintText,
+            filled: true,
+            fillColor: Colors.white,
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(25.7),
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+              borderRadius: BorderRadius.circular(25.7),
+            ),
 
-        },
-        decoration: InputDecoration(
-          label: Text(widget.label),
-          hintText: widget.hintText,
-          // errorText:
-          //     isEmail ? 'Do not use the @ char.' : 'null',
-          border: OutlineInputBorder(),
-          prefixIcon: Icon(widget.inputIcon),
-          suffixIcon: inputController.text.isNotEmpty
-              ? IconButton(
-                  color: Colors.red,
-                  icon: Icon(Icons.close),
-                  onPressed: () {
-                    inputController.clear();
-                  },
-                )
-              : null,
-        ),
-        // validator: (String? value) =>stateOfIsEmail(value),
-        keyboardType: widget.keyBoardType,
+            // errorText:
+            //     isEmail ? 'Do not use the @ char.' : 'null',
+            border: OutlineInputBorder(),
+            prefixIcon: Icon(widget.inputIcon),
+            suffixIcon: inputController.text.isNotEmpty
+                ? IconButton(
+                    color: Colors.red,
+                    icon: Icon(Icons.close),
+                    onPressed: () {
+                      inputController.clear();
+                    },
+                  )
+                : null,
+          ),
+          // validator: (String? value) =>stateOfIsEmail(value),
+          keyboardType: widget.keyBoardType,
+        
       ),
     );
   }
